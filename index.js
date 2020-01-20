@@ -17,7 +17,10 @@
 function addNumbers(num1, num2) {
   return num1 + num2;
 }
-
+console.log();
+console.log('Challenge: 1 addNumbers');
+console.log(addNumbers(2,5));
+console.log();
 // ⭐️ Example Challenge end ⭐️
 
 
@@ -41,15 +44,17 @@ function addNumbers(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
-//let id = 5;
-//let name = 'Leia';
-//let email = 'leia@leia.com';
-
 function makePersonObject(id, name, email) {
-  return { id, name, email };
+  return {
+    id: id,
+    name: name,
+    email: email,
+  }
 };
-// console.log(makePersonObject(5, 'Leia', 'leia@leia.com');
-
+console.log();
+console.log('Challenge: 2 makePersonObject');
+console.log(makePersonObject(5, 'Leia', 'leia@leia.com'));
+console.log();
 
 
 
@@ -69,11 +74,12 @@ function makePersonObject(id, name, email) {
 
 
 function getName(person) {
- 
-  return`Hello my name is ${person.name}!`;
- 
+  return`Hello my name is ${person.name}`;
 }
-
+console.log();
+console.log('Challenge: 3 getName');
+console.log(getName("Prapti"));
+console.log();
 
 /**
  * ### Challenge `makeSmartPerson`
@@ -238,7 +244,7 @@ function getModelYears(inventory) {
   }
 return years
 }
-console.log(getModelYears(inventory));
+console.log('model_year',getModelYears(inventory));
 /**
  * ### Challenge `getOlderCars`
  * 
@@ -251,18 +257,17 @@ console.log(getModelYears(inventory));
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(arr,number) {
-  let years = []
-  for(let i = 0; i < arr.length; i++){
-    if(number[i] < 1983){
-      years.push(arr[i].car_year);
+function getOlderCars(inventory,number) {
+  const  carYears = []
+  for(let i = 0; i < inventory.length; i++){
+    if(inventory[i].car_year <= number){
+      carYears.push(inventory[i]);
 
     }
-
   }
-  
+  return carYears
 }
-
+console.log(getOlderCars(inventory,1990));
 /**
  * ### Challenge `getGermanCars`
  * 
@@ -277,7 +282,7 @@ function getOlderCars(arr,number) {
 function getGermanCars(inventory) {
   let model = []
    for   (let i = 0; i < inventory.length; i++){
-   if (inventory[i].car_make === 'Audi' || inventory[i].car_make === "Mercendez-Benz" ||  inventory[i].car_make === "Volkswagen" ||  inventory[i].car_make === "BMW" ){
+   if (inventory[i].car_make === 'Audi' || inventory[i].car_make === "Mercedes-Benz" ||  inventory[i].car_make === "Volkswagen" ||  inventory[i].car_make === "BMW" ){
      model.push(inventory[i]);
        }
    }
@@ -303,9 +308,18 @@ function getGermanCars(inventory) {
  *   return num * 2
  * }
 */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = (a,b)  => {
+  return a + b;
+}
+console.log(sum(5,2))
+const addFive = num => {
+return num + 5;
+}
+console.log(addFive(2,5))
+const argTimesTwo = num => {
+  return  num * 2;
+}
+console.log(argTimesTwo)
 
 /**
  * ### Challenge `carMaker`
@@ -320,9 +334,15 @@ const argTimesTwo = null; // code here!
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
-  /* code here */
+function carMaker(number) {
+  const car =  {
+    odometer:number,
+    drive:(distance)  => car.odometer=car.odometer + distance
+  }
+  return car
 }
+
+
 
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
